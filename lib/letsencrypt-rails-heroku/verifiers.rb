@@ -54,7 +54,7 @@ module Letsencrypt
           break if already_exists
         end
       end
-      if already_exists || (Dnsimple.avaialable? && Dnsimple.update_auth_record(auth))
+      if already_exists || (Dnsimple.available? && Dnsimple.update_auth_record(auth))
         { success: true, challenge: challenge }
       else
         { success: false,
