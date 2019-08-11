@@ -1,7 +1,6 @@
 # LetsEncrypt & Rails & Heroku
 
-### Deprecated: Heroku now support [free automated SSL certificates for paid dynos](https://devcenter.heroku.com/articles/automated-certificate-management), you should use that instead of this gem unless your situation is covered by the [known limitations](https://devcenter.heroku.com/articles/automated-certificate-management#known-limitations) of ACM, e.g. your app runs in Heroku Private Spaces.
-
+### While Heroku now supports [free automated SSL certificates for paid dynos](https://devcenter.heroku.com/articles/automated-certificate-management), and you should use that instead of this gem unless your situation is covered by the [known limitations](https://devcenter.heroku.com/articles/automated-certificate-management#known-limitations) of ACM, e.g. your app runs in Heroku Private Spaces.  For wildcard certificates, this gem is quite useful, especially if you also use DNSimple to manage your DNS.
 
 [![Gem Version](https://badge.fury.io/rb/letsencrypt-rails-heroku.svg)](https://badge.fury.io/rb/letsencrypt-rails-heroku)
 
