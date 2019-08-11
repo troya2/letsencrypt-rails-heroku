@@ -48,3 +48,4 @@ pkg
 # For rubinius:
 #*.rbc
 letsencrypt-rails-heroku-2.0.0.gem
+*.gem
