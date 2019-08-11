@@ -20,7 +20,7 @@ Juwelier::Tasks.new do |gem|
   gem.summary = %Q{Automatic LetsEncrypt certificates in your Rails app on Heroku}
   gem.description = %Q{This gem automatically handles creation, renewal, and applying SSL certificates from LetsEncrypt to your Heroku account.}
   gem.email = "team@pixielabs.io"
-  gem.authors = ["Pixie Labs", "David Somers", "Abigail McPhillips", "Curtis Parfitt-Ford"]
+  gem.authors = ["Pixie Labs", "David Somers", "Abigail McPhillips", "Curtis Parfitt-Ford", "Troy Anderson"]
 
   # dependencies defined in Gemfile
 end

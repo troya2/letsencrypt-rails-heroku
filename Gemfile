@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'acme-client'
 gem 'platform-api'
+gem 'dnsimple', '~> 4.0'
 
 group :development do
   gem 'bundler', '~> 1.0'

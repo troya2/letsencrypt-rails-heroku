@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
-  s.authors = ["Pixie Labs".freeze, "David Somers".freeze, "Abigail McPhillips".freeze, "Curtis Parfitt-Ford".freeze]
-  s.date = "2019-02-16"
+  s.authors = ["Pixie Labs".freeze, "David Somers".freeze, "Abigail McPhillips".freeze, "Curtis Parfitt-Ford".freeze, "Troy Anderson".freeze]
+  s.date = "2019-08-11"
   s.description = "This gem automatically handles creation, renewal, and applying SSL certificates from LetsEncrypt to your Heroku account.".freeze
   s.email = "team@pixielabs.io".freeze
   s.extra_rdoc_files = [
@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
-    ".idea/vcs.xml",
     "CHANGELOG.md",
     "Gemfile",
     "Gemfile.lock",
@@ -30,16 +29,17 @@ Gem::Specification.new do |s|
     "VERSION",
     "letsencrypt-rails-heroku.gemspec",
     "lib/letsencrypt-rails-heroku.rb",
+    "lib/letsencrypt-rails-heroku/dnsimple.rb",
     "lib/letsencrypt-rails-heroku/exceptions.rb",
     "lib/letsencrypt-rails-heroku/letsencrypt.rb",
     "lib/letsencrypt-rails-heroku/middleware.rb",
     "lib/letsencrypt-rails-heroku/railtie.rb",
-    "lib/letsencrypt-rails-heroku/verify_with.rb",
+    "lib/letsencrypt-rails-heroku/verifiers.rb",
     "lib/tasks/letsencrypt.rake"
   ]
   s.homepage = "https://github.com/pixielabs/letsencrypt-rails-heroku".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.0.1".freeze
+  s.rubygems_version = "2.7.6".freeze
   s.summary = "Automatic LetsEncrypt certificates in your Rails app on Heroku".freeze
 
   if s.respond_to? :specification_version then
@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<acme-client>.freeze, [">= 0"])
       s.add_runtime_dependency(%q<platform-api>.freeze, [">= 0"])
+      s.add_runtime_dependency(%q<dnsimple>.freeze, ["~> 4.0"])
       s.add_development_dependency(%q<bundler>.freeze, ["~> 1.0"])
       s.add_development_dependency(%q<juwelier>.freeze, ["~> 2.1.0"])
       s.add_development_dependency(%q<rdoc>.freeze, ["~> 3.12"])
@@ -56,6 +57,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<acme-client>.freeze, [">= 0"])
       s.add_dependency(%q<platform-api>.freeze, [">= 0"])
+      s.add_dependency(%q<dnsimple>.freeze, ["~> 4.0"])
       s.add_dependency(%q<bundler>.freeze, ["~> 1.0"])
       s.add_dependency(%q<juwelier>.freeze, ["~> 2.1.0"])
       s.add_dependency(%q<rdoc>.freeze, ["~> 3.12"])
@@ -65,6 +67,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<acme-client>.freeze, [">= 0"])
     s.add_dependency(%q<platform-api>.freeze, [">= 0"])
+    s.add_dependency(%q<dnsimple>.freeze, ["~> 4.0"])
     s.add_dependency(%q<bundler>.freeze, ["~> 1.0"])
     s.add_dependency(%q<juwelier>.freeze, ["~> 2.1.0"])
     s.add_dependency(%q<rdoc>.freeze, ["~> 3.12"])

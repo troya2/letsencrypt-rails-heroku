@@ -84,6 +84,10 @@ which you should set.
    [SSL endpoint addon](https://elements.heroku.com/addons/ssl) configured.
  * `FORCE_DNS`: Optional: set this to anything if you'd like to force
     the DNS validation method.
+ * `DNSIMPLE_ACCESS_TOKEN`: Optional: Access token to the your DNSimple.com
+    account that manages the domain(s) you want to renew.  If set, the TXT
+    record will automatically be updated if needed.  This is particularly
+    useful for wildcard domains which cannot use the HTTP validation method.
 
 The gem itself will temporarily create additional environment variables during
 the challenge / validation process:

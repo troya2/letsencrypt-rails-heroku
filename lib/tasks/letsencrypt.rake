@@ -62,7 +62,7 @@ namespace :letsencrypt do
       # HTTP challenge isn't possible (ex: wildcard domains), or where explicitly
       # requested in the environment
       if challenge && !Letsencrypt.configuration.force_dns
-        dns = Letsencrypt::VerifyWith.http heroku, heroku_app, challenge
+        Letsencrypt::VerifyWith.http heroku, heroku_app, challenge
       else
         puts 'HTTP challenge unavailable, falling back to DNS challenge'
         using_dns = true

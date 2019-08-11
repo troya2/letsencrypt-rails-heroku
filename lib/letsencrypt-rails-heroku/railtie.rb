@@ -1,6 +1,7 @@
 class LetsencryptRailsHerokuRailtie < Rails::Railtie
   config.before_configuration do
     Letsencrypt.configure
+    Letsencrypt::Dnsimple.configure
   end
 
   rake_tasks do
