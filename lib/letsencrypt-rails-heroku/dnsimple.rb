@@ -25,7 +25,7 @@ module Letsencrypt
         raise "acme wanted record name #{challenge.record_name}, expected #{LETSENCRYPT_NAME}" unless challenge.record_name == LETSENCRYPT_NAME
         raise "acme wanted record type #{challenge.record_type}, expected #{LETSENCRYPT_NAME_TYPE}" unless challenge.record_type == LETSENCRYPT_NAME_TYPE
 
-        client = Dnsimple::Client.new access_token:configuration.access_token
+        client = ::Dnsimple::Client.new access_token:configuration.access_token
         account_id = client.identity.whoami.data.account.id
         record = client.zones.all_zone_records(account_id, auth.domain, filter:{name:challenge.record_name, type:challenge.record_type})
 
