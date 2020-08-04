@@ -15,7 +15,7 @@ module Letsencrypt
       hostname = heroku.domain.list(heroku_app).first['hostname']
 
       # Wait at least a little bit, otherwise the first request will almost always fail.
-      sleep(10)
+      sleep(2)
 
       start_time = Time.now
 

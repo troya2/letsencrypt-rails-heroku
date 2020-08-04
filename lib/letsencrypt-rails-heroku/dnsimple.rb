@@ -35,10 +35,12 @@ module Letsencrypt
           else
             puts "Updating existing record"
             client.zones.update_zone_record(account_id, auth.domain, record.data.first.id, content:challenge.record_content)
+            sleep(5)
           end
         else
           puts "Adding record with challenge value"
           client.zones.create_zone_record(account_id, auth.domain, name:challenge.record_name, type:challenge.record_type, content:challenge.record_content)
+          sleep(5)
         end
 
         true
